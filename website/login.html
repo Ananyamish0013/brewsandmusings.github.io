@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @font-face {
+            font-family: "myfont";
+            src: url(Super\ Sunkissed.ttf);
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #e8e8af;
+            overflow: hidden;
+        }
+        .wrapper{
+            display: flex;
+            width: 1600px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+
+        }
+        .left{
+            flex: 2;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #C19A6B;
+            border-right: 1px solid #e17777;
+
+        }
+        .left img{
+            max-width: 100%;
+            height: 100%;
+        }
+        .right{
+            align-items: center;
+            font-family: "myfont";
+            font-size: larger;
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #8B5E3C;
+        }
+        form{
+            border: 3px solid #f1f1f1;
+        }
+        input[type=text], input[type=password]{
+            width: 400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: imline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 40px;
+        }
+        button{
+            background-color: rgba(207, 61, 39, 0.471);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 400px;
+            font-family: sans-serif;
+            font-size: 25px;
+        }
+        button.hover{
+            opacity: 0.8;
+        }
+        .cancelbtn{
+            width: auto;
+            padding: 5px 5px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px auto 0 auto;
+        }
+        img.avatar{
+            width: 40%;
+            border-radius: 50%;
+        }
+        .container{
+            padding: 16px;
+        }
+        span.psw{
+            float: right;
+            padding-top: 16px;
+            border-radius: 40px;
+        }
+        label{
+            color: #FAF9F6;
+            font-family: "myfont";
+            font-size: 40px;
+        }
+       label1{
+        color: #FAF9F6;
+        font-family: 'Courier New', Courier, monospace;
+       }
+    </style>
+    <title>LOGIN FORM</title>
+</head>
+<body>
+
+<form onsubmit="login(event)">
+<div class="wrapper">
+    <div class="left">
+        <img src="assets about page\resize.png">
+    </div>
+      
+
+    <div class="right">     
+        <label for="uname"><b>USERNAME</b></label>
+        <input type="text" id="username" placeholder="Enter Username" name="uname" required>
+        <label for="psw"><b>PASSWORD</b></label>
+        <input type="password" id="password" placeholder="Enter Password" name="psw" required>
+        <button type="submit"><b>LOGIN</b></button>
+        <button type="button" class="cancelbtn"><b>Cancel</b></button>
+        <label1>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label1>
+    </div>
+
+<script>
+  function login(event) {
+    event.preventDefault(); // stop form submission
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    // simple demo check
+    if(user === "test" && pass === "1234") {
+      // save user in localStorage
+      localStorage.setItem("user", user);
+      window.location.href = "home actual.html";  // redirect
+    } else {
+      alert("Invalid credentials!");
+    }
+  }
+</script>
+    
+</form>
+</body>
